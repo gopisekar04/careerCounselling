@@ -7,6 +7,7 @@ function Dashboard() {
   // Setting up State
   const [topic, setTopic] = useState('');
   const [blogPost, setBlogPost] = useState(``);
+    const [stats, setStats] = useState(null);
 
   // Connecting to the KaibanJS Store
   const useTeamStore = careerCounsellingTeam.useStore();

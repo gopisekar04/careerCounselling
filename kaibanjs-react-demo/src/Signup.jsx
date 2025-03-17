@@ -43,78 +43,6 @@ function Signup() {
         <h2>Sign Up</h2>
         <p>Create an account to continue</p>
 
-        <form onSubmit={handleSubmit} className="form-container">
-          <div className="left-container">
-            <div className="form-group">
-              <label>First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Contact Number</label>
-              <input
-                type="tel"
-                name="contactNo"
-                value={formData.contactNo}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-          
-          <div className="right-container">
-          <div className="form-group">
-            <label>Date of Birth</label>
-            <input
-              type="date"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
             <div className="form-group">
               <label>Gender</label>
               <select
@@ -181,12 +109,6 @@ function Signup() {
               )}
             </div>
           </div>
-
-          <div>
-            <button type="submit" className="signup-btn">Sign Up</button>
-          </div>
-          
-        </form>
 
         <p className="signin-text">
           Already have an account? <a href="/login">Sign in</a>

@@ -40,7 +40,7 @@ input[type="text"]:focus {
 }
 
 /* Button styling */
-button {
+/* button {
   background-color: #6366f1;
   color: white;
   border: none;
@@ -51,7 +51,7 @@ button {
   position: absolute;
   right: 8px;
   top: 8px;
-}
+} */
 
 button:hover {
   background-color: #4f46e5;

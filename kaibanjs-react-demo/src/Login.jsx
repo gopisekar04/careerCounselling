@@ -16,12 +16,12 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    // e.preventDefault();
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("http://localhost:5000/api/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function Login() {
 
         {error && <p className="error-message">{error}</p>}
 
-        <form onSubmit={handleSubmit}>
+        <div>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -72,9 +72,9 @@ function Login() {
               required
             />
           </div>
-
-          <button type="submit">Login</button>
-        </form>
+    
+          <button onClick={handleSubmit}>Login</button>
+        </div>
 
         <p className="signup-text">
           Don't have an account? <a href="/signup">Sign up</a>

@@ -31,11 +31,30 @@ function Signup() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-    navigate("/dashboard");
+  const handleSubmit = async () => {
+    // e.preventDefault();
+    try {
+      console.log("inside handlesubmit");
+      
+      const response = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message);
+        navigate("/dashboard");
+      } else {
+        console.log(data.error);
+        // (data.error);
+      }
+    } catch (error) {
+      console.error("Signup Error:", error);
+    }
   };
+  
 
   return (
     <div className="signup-container">
@@ -43,7 +62,7 @@ function Signup() {
         <h2>Sign Up</h2>
         <p>Create an account to continue</p>
 
-        <form onSubmit={handleSubmit} className="form-container">
+        <form className="form-container">
           <div className="left-container">
             <div className="form-group">
               <label>First Name</label>
@@ -183,7 +202,7 @@ function Signup() {
           </div>
           
         </form>
-        <button>Sign Up</button>
+        <button onClick={handleSubmit}>Sign Up</button>
         <p className="signin-text">
           Already have an account? <a href="/login">Sign in</a>
         </p>

@@ -76,7 +76,7 @@ const careerCounsellingTeam = new Team({
     agents: [researchAgent, advisorAgent, cutoffFinderAgent],
     tasks: [researchTask, adviceTask, cutoffSearchTask],
     env: {
-        GOOGLE_API_KEY: 'AIzaSyDT7Mg7ERsqd0bW74hg54g0vMJWiqQKCf0'
+        GOOGLE_API_KEY: ''
     }
 });
 
